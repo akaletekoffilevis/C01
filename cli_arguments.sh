@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #initialiser le compteur a 1
+read -p "Entrer vos arguments : " arg
+set $arg
 compt=1
 # Afficher chaque argument ligne par ligne
 while [ $# -gt 0 ]; do
@@ -12,18 +14,4 @@ while [ $# -gt 0 ]; do
 done
 # n est un chiffre
 #mettre fin au script
-exit 0
-
-#!/bin/bash
-read -p "Entrée votre chaine de caractère : " Chaine
-set $Chaine
-taille=$#
-arg=1
-i=0
-while [ $i -lt $taille ]; do 
-      echo "Argument $arg: $1"
-      arg=$((arg + 1))
-      i=$((i + 1))
-      shift 1
-done
 exit 0
