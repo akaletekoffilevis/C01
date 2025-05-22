@@ -12,6 +12,8 @@ if [ -f "$fichier" ]; then
     else
         echo "La chaîne '$chaine' n'a pas été trouvée dans $fichier."
     fi
+else
+  echo "Le fichier n'existe pas"
 fi
 #mettre fin au script
 exit 0
