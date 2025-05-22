@@ -8,7 +8,7 @@ read -p "Entrer la chaine a rechercher  : " chaine
 # Recherche de la chaîne dans le fichier avec grep
 # Rechercher la chaîne dans le fichier
 if [ -f "$fichier" ]; then
-    grep --color=auto -q "$chaine" "$fichier"
+    grep  -q "$chaine" "$fichier"
     if [ $? -ne 0 ]; then
         echo "La chaîne '$chaine' n'a pas été trouvée dans $fichier."
     # if grep -q "$chaine" "$fichier"; then
