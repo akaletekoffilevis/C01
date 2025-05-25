@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #lire le nom du dossier
-read -p "Entrer le nom du dossier : " dossier 
+#read -p "Entrer le nom du dossier : " dossier 
 #verification de l'existence du dossier
 #if [ -d "$dossier" ]; then
       #comptage du nombre de fichier
@@ -9,8 +9,9 @@ read -p "Entrer le nom du dossier : " dossier
       #afficher le nombre de #fichiers present
       #echo "Le dossier $dossier €contient $file_count fichier(s)."
 #fi
-count=(ls "../$dossier" | wc -l)
+read dossier
+count=$(ls "$dossier" | wc -l)
 counts=$(echo $count)
-echo "Le dossier $dossier €contient $file_count fichier(s)."
+echo "Le dossier $dossier contient $counts fichier(s)."
 #mettre fin au script
 exit 0
