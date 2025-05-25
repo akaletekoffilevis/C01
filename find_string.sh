@@ -1,22 +1,14 @@
 #!/bin/bash
 
-#lire le nom du fichier
-read -p "Entrer le nom du fichier : " fichier
-#lire la chaine a rechercher
-read -p "Entrer la chaine a rechercher  : " chaine
+#lire le nom du fichier et le mot a chcher
+read fichier
+read mot
 
-# Recherche de la chaîne dans le fichier avec grep
-# Rechercher la chaîne dans le fichier
-if [ -f "$fichier" ]; then
-    grep  -q "$chaine" "$fichier"
-    if [ $? -ne 0 ]; then
-        echo "La chaîne '$chaine' n'a pas été trouvée dans $fichier."
-    # if grep -q "$chaine" "$fichier"; then
-    else
-        echo "La chaîne '$chaine' a été trouvée dans $fichier."
-    fi
+# La commande grep -q en shell est utilisée pour chercher un motif dans un texte, sans afficher le résultat, mais en se basant uniquement sur le code de retour (succès ou échec).
+if grep -q "$mot" "$fichier" ; then
+  echo "La chaîne '$mot' a été trouvée dans $fichier."
 else
-    echo "Le fichier n'existe pas"
+  echo "La chaîne '$mot' n'a pas été trouvée dans $fichier."
 fi
 #mettre fin au script
 exit 0
