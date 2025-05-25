@@ -9,7 +9,7 @@ read -p "Entrer le nom du dossier : " dossier
       #afficher le nombre de #fichiers present
       #echo "Le dossier $dossier €contient $file_count fichier(s)."
 #fi
-count=(ls "$dossier" | wc -l)
+count=(ls "../$dossier" | wc -l)
 counts=$(echo $count)
 echo "Le dossier $dossier €contient $file_count fichier(s)."
 #mettre fin au script
